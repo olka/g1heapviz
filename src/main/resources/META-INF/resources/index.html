@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>g1heapviz — JVM Heap Fragmentation Visualizer</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="echarts.js"></script>
+    </head>
+    <body class="bg-gray-50 text-gray-800 min-h-screen">
+        <!-- Header -->
+        <header
+            class="border-b border-gray-200 bg-white px-6 py-4 flex items-center justify-between shadow-sm"
+        >
+            <div>
+                <h1 class="text-xl font-bold text-gray-900 tracking-tight">
+                    g1heapviz
+                </h1>
+                <p class="text-xs text-gray-400">
+                    JVM Heap Fragmentation Visualizer
+                </p>
+            </div>
+            <form
+                id="form"
+                method="post"
+                enctype="multipart/form-data"
+                action="/multipart"
+                class="flex items-center gap-3"
+            >
+                <label
+                    class="text-sm text-gray-600 cursor-pointer bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded border border-gray-300"
+                >
+                    <input
+                        type="file"
+                        name="file"
+                        class="hidden"
+                        id="fileInput"
+                    />
+                    <span id="fileName">Choose GC log...</span>
+                </label>
+                <button
+                    class="bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-medium px-4 py-1.5 rounded"
+                >
+                    Upload
+                </button>
+                <span id="log" class="text-xs text-gray-400"></span>
+            </form>
+        </header>
+
+        <div class="flex">
+            <!-- Main chart area -->
+            <div class="flex-1 p-4">
+                <!-- Controls -->
+                <div class="flex items-center gap-2 mb-3">
+                    <span
+                        class="text-xs text-gray-500 uppercase tracking-wider mr-2"
+                        >GC Cycle</span
+                    >
+                    <button
+                        id="minusBtn"
+                        class="w-8 h-8 flex items-center justify-center bg-white hover:bg-gray-100 rounded border border-gray-300 text-gray-600 font-bold transition"
+                    >
+                        ⏪
+                    </button>
+                    <input
+                        type="text"
+                        id="n"
+                        value="0"
+                        class="w-16 h-8 text-center bg-white border border-gray-300 rounded text-gray-900 text-sm font-mono focus:outline-none focus:border-indigo-500"
+                    />
+                    <button
+                        id="plusBtn"
+                        class="w-8 h-8 flex items-center justify-center bg-white hover:bg-gray-100 rounded border border-gray-300 text-gray-600 font-bold transition"
+                    >
+                        ⏩
+                    </button>
+                    <button
+                        id="playBtn"
+                        class="w-8 h-8 flex items-center justify-center bg-white hover:bg-gray-100 rounded border border-gray-300 text-gray-600 transition ml-1"
+                    >
+                        ▶
+                    </button>
+                    <span
+                        id="snapshotInfo"
+                        class="text-xs text-gray-400 ml-3"
+                    ></span>
+                </div>
+
+                <!-- Chart -->
+                <div
+                    id="main"
+                    class="w-full bg-white rounded-lg border border-gray-200 shadow-sm"
+                    style="height: 720px"
+                ></div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside
+                class="w-56 p-4 pt-16 border-l border-gray-200 flex-shrink-0"
+            >
+                <div class="mb-6">
+                    <h3
+                        class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3"
+                    >
+                        Region Types
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3.5 h-3.5 rounded-sm flex-shrink-0 border border-gray-300"
+                                style="background: red"
+                            ></span>
+                            <span>Humongous (HS/HC)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3.5 h-3.5 rounded-sm flex-shrink-0 border border-gray-300"
+                                style="background: #4a4a4a"
+                            ></span>
+                            <span>Old (O)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3.5 h-3.5 rounded-sm flex-shrink-0 border border-gray-300"
+                                style="background: #6b6b6b"
+                            ></span>
+                            <span>Survivor (S)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3.5 h-3.5 rounded-sm flex-shrink-0 border border-gray-300"
+                                style="background: #4a6e2a"
+                            ></span>
+                            <span>Eden (E)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3.5 h-3.5 rounded-sm flex-shrink-0 border border-gray-300"
+                                style="background: #01b832"
+                            ></span>
+                            <span>Collection Set (CS)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span
+                                class="w-3.5 h-3.5 rounded-sm flex-shrink-0 border border-gray-300"
+                                style="background: #02d43a"
+                            ></span>
+                            <span>Free (F)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3
+                        class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3"
+                    >
+                        Metrics
+                    </h3>
+                    <div class="space-y-1.5 text-sm font-mono">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Ext. frag:</span>
+                            <span id="metricExt" class="text-gray-900">—</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Int. frag:</span>
+                            <span id="metricInt" class="text-gray-900">—</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Free:</span>
+                            <span id="metricFree" class="text-gray-900">—</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <script type="text/javascript">
+            // File input label
+            document
+                .getElementById("fileInput")
+                .addEventListener("change", function () {
+                    document.getElementById("fileName").textContent = this
+                        .files[0]
+                        ? this.files[0].name
+                        : "Choose GC log...";
+                });
+
+            // Form submit
+            var form = document.getElementById("form");
+            var log = document.getElementById("log");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                log.textContent = "Uploading...";
+                var formData = new FormData(form);
+                var req = new XMLHttpRequest();
+                req.open("POST", "/multipart", true);
+                req.onload = function () {
+                    log.textContent = req.responseText;
+                    get_file("/graph/gridsize", function (response) {
+                        gridSize = parseInt(response);
+                        run();
+                    });
+                };
+                req.onerror = function () {
+                    log.textContent = "Upload failed";
+                };
+                req.send(formData);
+            });
+
+            // HTTP helper
+            function get_file(url, callback) {
+                var req = new XMLHttpRequest();
+                req.overrideMimeType("application/json");
+                req.open("GET", url, true);
+                req.onload = function () {
+                    callback(req.responseText);
+                };
+                req.send(null);
+            }
+
+            // Controls
+            var nInput = document.getElementById("n");
+
+            document
+                .getElementById("plusBtn")
+                .addEventListener("click", function () {
+                    nInput.value = Number(nInput.value) + 1;
+                    run();
+                });
+            document
+                .getElementById("minusBtn")
+                .addEventListener("click", function () {
+                    nInput.value = Math.max(0, Number(nInput.value) - 1);
+                    run();
+                });
+
+            var playInterval = null;
+            document
+                .getElementById("playBtn")
+                .addEventListener("click", function () {
+                    var btn = this;
+                    if (playInterval) {
+                        clearInterval(playInterval);
+                        playInterval = null;
+                        btn.textContent = "▶";
+                    } else {
+                        btn.textContent = "⏸";
+                        playInterval = setInterval(function () {
+                            nInput.value = Number(nInput.value) + 1;
+                            run();
+                        }, 500);
+                    }
+                });
+
+            // Fetch snapshot count
+            get_file("/graph/size", function (response) {
+                var total = parseInt(response);
+                if (total > 0) {
+                    document.getElementById("snapshotInfo").textContent =
+                        total + " snapshots loaded";
+                }
+            });
+
+            // Chart
+            var chartDom = document.getElementById("main");
+            var myChart = echarts.init(chartDom);
+            var dataArr = [];
+            var gridSize = 0;
+
+            // Fetch grid size
+            get_file("/graph/gridsize", function (response) {
+                gridSize = parseInt(response);
+            });
+
+            var regionNames = {
+                0: "Free (F)",
+                10: "Collection Set (CS)",
+                30: "Eden (E)",
+                60: "Survivor (S)",
+                90: "Old (O)",
+                120: "Humongous Start (HS)",
+                150: "Humongous Continue (HC)",
+            };
+
+            function run() {
+                get_file("/graph/getn?n=" + nInput.value, function (response) {
+                    dataArr = JSON.parse(response);
+                    updateChart();
+                });
+                get_file(
+                    "/graph/metrics?n=" + nInput.value,
+                    function (response) {
+                        var m = JSON.parse(response);
+                        document.getElementById("metricExt").textContent =
+                            m.ext + "%";
+                        document.getElementById("metricInt").textContent =
+                            m["int"] + "%";
+                        document.getElementById("metricFree").textContent =
+                            m.free + "%";
+                    },
+                );
+            }
+
+            function updateChart() {
+                var xLen = gridSize || 80;
+                var yLen = gridSize || 80;
+                var hours = Array.from({ length: xLen }, function (_, i) {
+                    return i;
+                });
+                var days = Array.from({ length: yLen }, function (_, i) {
+                    return i;
+                });
+
+                var data = dataArr.map(function (item) {
+                    return [item[1], item[0], item[2] || "-"];
+                });
+
+                var option = {
+                    tooltip: {
+                        formatter: function (params) {
+                            var val = params.value[2];
+                            var name = regionNames[val] || val;
+                            return (
+                                "Region [" +
+                                params.value[1] +
+                                ", " +
+                                params.value[0] +
+                                "]<br/>Type: " +
+                                name
+                            );
+                        },
+                    },
+                    grid: {
+                        height: "92%",
+                        width: "92%",
+                        top: "4%",
+                        left: "4%",
+                    },
+                    xAxis: {
+                        type: "category",
+                        data: hours,
+                        splitArea: { show: true },
+                    },
+                    yAxis: {
+                        type: "category",
+                        data: days,
+                        splitArea: { show: true },
+                    },
+                    visualMap: {
+                        min: 0,
+                        max: 151,
+                        calculable: true,
+                        left: "97%",
+                        top: "4%",
+                        height: "125px",
+                        realtime: false,
+                        inRange: {
+                            color: ["#02d43a", "rgba(3,4,5,0.4)", "red"],
+                        },
+                    },
+                    series: [
+                        {
+                            name: "Heap region",
+                            type: "heatmap",
+                            data: data,
+                            pointSize: 65,
+                            blurSize: 0,
+                            progressive: 0,
+                            progressiveThreshold: 6000,
+                            animation: false,
+                            universalTransition: true,
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowColor: "rgba(0, 0, 0, 0.5)",
+                                },
+                            },
+                        },
+                    ],
+                };
+
+                myChart.setOption(option);
+            }
+
+            // Initial load
+            run();
+
+            // Resize chart on window resize
+            window.addEventListener("resize", function () {
+                myChart.resize();
+            });
+        </script>
+    </body>
+</html>
