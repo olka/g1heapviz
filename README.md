@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/f75310b0-cbf5-48a1-888a-290fa77a3d8c
 
 ```bash
 docker build . -t g1heapviz
-docker run -v $PWD/data/:/app/data --network=host -p 8000:8000  g1heapviz data/jvm_crash.log
+docker run -v $PWD/data/:/app/data --network=host -p 8080:8080  g1heapviz data/jvm_crash.log
 ```
 Open http://127.0.0.1:8080 - — you should see a heatmap grid. File data/lusearch.log will be loaded for analysis.
 
