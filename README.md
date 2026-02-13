@@ -43,14 +43,14 @@ java -Xmx1024m -Xms1024m -XX:G1HeapRegionSize=16m -XX:+UseG1GC "-Xlog:gc*=trace:
 ### 3. Run g1heapviz with the GC log
 
 ```bash
-java -jar target/quarkus-app/quarkus-run.jar data/jvm_crash.log
+java -jar target/g1heapviz-1.0.0-runner.jar data/jvm_crash.log
 ```
 
 Expected output:
 ```
 g1heapviz: Loading GC log: sample_gc.log
 g1heapviz: Loaded XX heap snapshots
-g1heapviz: Open http://localhost:8080/index.html to visualize
+g1heapviz: Open http://localhost:8080/ to visualize
 ```
 
 ### 4. Verify
@@ -64,7 +64,7 @@ NOTE: When parsing crash log there's no data on previous GC cycles so only one c
 Please note that CLI analysis is impossible for crash logs since there's only one heap snapshot available
 
 ```bash
-java -cp target/classes org.gc.log.parser.GcLogParser data/lusearch.log
+java -cp target/g1heapviz-1.0.0-runner.jar org.gc.log.parser.GcLogParser data/lusearch.log
 ```
 
 Output format: `GC#, ext_frag_before, ext_frag_after, is_full_gc`
