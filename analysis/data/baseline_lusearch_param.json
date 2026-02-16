@@ -1,0 +1,1258 @@
+{
+  "results": [
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar avrora",
+      "mean": 12.87748028512,
+      "stddev": 0.014196908822108181,
+      "median": 12.87748028512,
+      "user": 9.993909200000001,
+      "system": 10.3257484,
+      "min": 12.867441554620001,
+      "max": 12.88751901562,
+      "times": [
+        12.88751901562,
+        12.867441554620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "avrora",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar batik",
+      "mean": 5.51799108162,
+      "stddev": 0.00015913013846503675,
+      "median": 5.51799108162,
+      "user": 17.979883700000002,
+      "system": 0.7817444,
+      "min": 5.517878559620001,
+      "max": 5.51810360362,
+      "times": [
+        5.51810360362,
+        5.517878559620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "batik",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar biojava",
+      "mean": 17.864226943619997,
+      "stddev": 0.06915767363726906,
+      "median": 17.864226943619997,
+      "user": 21.9540432,
+      "system": 1.3424568999999997,
+      "min": 17.81532508362,
+      "max": 17.913128803619998,
+      "times": [
+        17.81532508362,
+        17.913128803619998
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "biojava",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar eclipse",
+      "mean": 29.51307678012,
+      "stddev": 0.06070840591850315,
+      "median": 29.51307678012,
+      "user": 125.2715547,
+      "system": 5.782782899999999,
+      "min": 29.47014945462,
+      "max": 29.556004105619998,
+      "times": [
+        29.556004105619998,
+        29.47014945462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "eclipse",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar fop",
+      "mean": 4.55451815412,
+      "stddev": 0.13485157834293712,
+      "median": 4.55451815412,
+      "user": 24.297030200000002,
+      "system": 0.9265259,
+      "min": 4.45916368862,
+      "max": 4.64987261962,
+      "times": [
+        4.64987261962,
+        4.45916368862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "fop",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar graphchi",
+      "mean": 17.179658808619998,
+      "stddev": 0.15156608994777185,
+      "median": 17.179658808619998,
+      "user": 85.2049112,
+      "system": 2.9214954,
+      "min": 17.07248539862,
+      "max": 17.28683221862,
+      "times": [
+        17.07248539862,
+        17.28683221862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "graphchi",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar h2",
+      "mean": 33.55831583612,
+      "stddev": 0.08720248927118569,
+      "median": 33.55831583612,
+      "user": 175.2797072,
+      "system": 4.827478899999999,
+      "min": 33.49665436462,
+      "max": 33.619977307620005,
+      "times": [
+        33.619977307620005,
+        33.49665436462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "h2",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar jme",
+      "mean": 8.75076537412,
+      "stddev": 0.008913090169244547,
+      "median": 8.75076537412,
+      "user": 4.5308247,
+      "system": 0.3710189,
+      "min": 8.744462867620001,
+      "max": 8.757067880620001,
+      "times": [
+        8.744462867620001,
+        8.757067880620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "jme",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar jython",
+      "mean": 17.672981232119998,
+      "stddev": 0.113627971952376,
+      "median": 17.672981232119998,
+      "user": 44.9240707,
+      "system": 1.3757213999999998,
+      "min": 17.592634122619998,
+      "max": 17.753328341619998,
+      "times": [
+        17.753328341619998,
+        17.592634122619998
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "jython",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar luindex",
+      "mean": 30.467774067119997,
+      "stddev": 0.02258186871466146,
+      "median": 30.467774067119997,
+      "user": 42.8167107,
+      "system": 1.8683674,
+      "min": 30.451806274619997,
+      "max": 30.48374185962,
+      "times": [
+        30.48374185962,
+        30.451806274619997
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "luindex",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar lusearch",
+      "mean": 8.205128137620001,
+      "stddev": 0.0560955630116286,
+      "median": 8.205128137620001,
+      "user": 109.19337519999999,
+      "system": 3.5552779,
+      "min": 8.16546258462,
+      "max": 8.24479369062,
+      "times": [
+        8.16546258462,
+        8.24479369062
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "lusearch",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar pmd",
+      "mean": 7.02667303512,
+      "stddev": 0.2297691633325417,
+      "median": 7.02667303512,
+      "user": 94.3133052,
+      "system": 3.2229973999999997,
+      "min": 6.864201701620001,
+      "max": 7.18914436862,
+      "times": [
+        6.864201701620001,
+        7.18914436862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "pmd",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar spring",
+      "mean": 14.668473436620001,
+      "stddev": 0.11227949881455672,
+      "median": 14.668473436620001,
+      "user": 162.5799582,
+      "system": 9.8710029,
+      "min": 14.58907984162,
+      "max": 14.74786703162,
+      "times": [
+        14.58907984162,
+        14.74786703162
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "spring",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar sunflow",
+      "mean": 6.414285527620001,
+      "stddev": 0.1552526321636821,
+      "median": 6.414285527620001,
+      "user": 131.89804270000002,
+      "system": 1.5987658999999999,
+      "min": 6.30450533862,
+      "max": 6.524065716620001,
+      "times": [
+        6.30450533862,
+        6.524065716620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "sunflow",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tomcat",
+      "mean": 10.87782499212,
+      "stddev": 0.00928246719538807,
+      "median": 10.87782499212,
+      "user": 78.76352969999999,
+      "system": 13.3636454,
+      "min": 10.87126129662,
+      "max": 10.884388687620001,
+      "times": [
+        10.87126129662,
+        10.884388687620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tomcat",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tradebeans",
+      "mean": 24.034207375119998,
+      "stddev": 0.25624614177218324,
+      "median": 24.034207375119998,
+      "user": 90.1667257,
+      "system": 4.297242899999999,
+      "min": 23.85301399062,
+      "max": 24.21540075962,
+      "times": [
+        23.85301399062,
+        24.21540075962
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tradebeans",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tradesoap",
+      "mean": 25.741379556619997,
+      "stddev": 0.18903196738645964,
+      "median": 25.741379556619997,
+      "user": 116.8989802,
+      "system": 4.4029674,
+      "min": 25.60771377062,
+      "max": 25.875045342619998,
+      "times": [
+        25.875045342619998,
+        25.60771377062
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tradesoap",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar xalan",
+      "mean": 4.12575023912,
+      "stddev": 0.03748105124310467,
+      "median": 4.12575023912,
+      "user": 46.1932587,
+      "system": 30.970320899999997,
+      "min": 4.0992471336200005,
+      "max": 4.15225334462,
+      "times": [
+        4.0992471336200005,
+        4.15225334462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "xalan",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java  -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar zxing",
+      "mean": 4.906519402120001,
+      "stddev": 0.25307150668208644,
+      "median": 4.906519402120001,
+      "user": 86.9977062,
+      "system": 4.8750664,
+      "min": 4.727570823620001,
+      "max": 5.085467980620001,
+      "times": [
+        4.727570823620001,
+        5.085467980620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "zxing",
+        "ppparams": ""
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar avrora",
+      "mean": 12.866070972620001,
+      "stddev": 0.024715685756362814,
+      "median": 12.866070972620001,
+      "user": 9.7582482,
+      "system": 10.4137179,
+      "min": 12.84859434362,
+      "max": 12.88354760162,
+      "times": [
+        12.88354760162,
+        12.84859434362
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "avrora",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar batik",
+      "mean": 5.602466655120001,
+      "stddev": 0.03288708030911276,
+      "median": 5.602466655120001,
+      "user": 17.9898202,
+      "system": 1.0506913999999998,
+      "min": 5.57921197762,
+      "max": 5.62572133262,
+      "times": [
+        5.62572133262,
+        5.57921197762
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "batik",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar biojava",
+      "mean": 17.76543794212,
+      "stddev": 0.003149134698244645,
+      "median": 17.76543794212,
+      "user": 21.9544182,
+      "system": 1.2188819,
+      "min": 17.76321116762,
+      "max": 17.767664716619997,
+      "times": [
+        17.767664716619997,
+        17.76321116762
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "biojava",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar eclipse",
+      "mean": 29.348674546619996,
+      "stddev": 0.07976362057418938,
+      "median": 29.348674546619996,
+      "user": 124.7712587,
+      "system": 5.913060399999999,
+      "min": 29.292273149619998,
+      "max": 29.405075943619998,
+      "times": [
+        29.405075943619998,
+        29.292273149619998
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "eclipse",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar fop",
+      "mean": 4.40192905462,
+      "stddev": 0.07649323615485247,
+      "median": 4.40192905462,
+      "user": 23.5585937,
+      "system": 0.9836583999999999,
+      "min": 4.34784016862,
+      "max": 4.456017940620001,
+      "times": [
+        4.34784016862,
+        4.456017940620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "fop",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar graphchi",
+      "mean": 17.01522652762,
+      "stddev": 0.07061342265197082,
+      "median": 17.01522652762,
+      "user": 77.8436537,
+      "system": 3.5603759,
+      "min": 16.96529529762,
+      "max": 17.06515775762,
+      "times": [
+        16.96529529762,
+        17.06515775762
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "graphchi",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar h2",
+      "mean": 34.06858583412,
+      "stddev": 0.5662443369983318,
+      "median": 34.06858583412,
+      "user": 174.08844219999997,
+      "system": 4.846516899999999,
+      "min": 33.66819062362,
+      "max": 34.46898104462,
+      "times": [
+        33.66819062362,
+        34.46898104462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "h2",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar jme",
+      "mean": 8.77631094612,
+      "stddev": 0.025805438422440263,
+      "median": 8.77631094612,
+      "user": 4.5807012,
+      "system": 0.3603209,
+      "min": 8.758063745620001,
+      "max": 8.79455814662,
+      "times": [
+        8.79455814662,
+        8.758063745620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "jme",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar jython",
+      "mean": 17.674921407619998,
+      "stddev": 0.2887087840643157,
+      "median": 17.674921407619998,
+      "user": 43.5370442,
+      "system": 1.3592913999999998,
+      "min": 17.47077346862,
+      "max": 17.87906934662,
+      "times": [
+        17.87906934662,
+        17.47077346862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "jython",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar luindex",
+      "mean": 30.34953668662,
+      "stddev": 0.11599002326405614,
+      "median": 30.34953668662,
+      "user": 43.12938869999999,
+      "system": 1.8661168999999997,
+      "min": 30.26751935462,
+      "max": 30.431554018619998,
+      "times": [
+        30.431554018619998,
+        30.26751935462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "luindex",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar lusearch",
+      "mean": 8.33206332962,
+      "stddev": 0.11727889366418348,
+      "median": 8.33206332962,
+      "user": 107.5925822,
+      "system": 3.7143034,
+      "min": 8.24913462862,
+      "max": 8.41499203062,
+      "times": [
+        8.24913462862,
+        8.41499203062
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "lusearch",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar pmd",
+      "mean": 6.90910478312,
+      "stddev": 0.2095811841194929,
+      "median": 6.90910478312,
+      "user": 91.6368777,
+      "system": 3.0683458999999997,
+      "min": 6.760908506620001,
+      "max": 7.05730105962,
+      "times": [
+        7.05730105962,
+        6.760908506620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "pmd",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar spring",
+      "mean": 14.42519877662,
+      "stddev": 0.36521381900291866,
+      "median": 14.42519877662,
+      "user": 160.0128867,
+      "system": 9.5499124,
+      "min": 14.16695360862,
+      "max": 14.68344394462,
+      "times": [
+        14.68344394462,
+        14.16695360862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "spring",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar sunflow",
+      "mean": 7.096881080120001,
+      "stddev": 0.9943273197298196,
+      "median": 7.096881080120001,
+      "user": 146.8403912,
+      "system": 1.8360623999999999,
+      "min": 6.393785489620001,
+      "max": 7.79997667062,
+      "times": [
+        6.393785489620001,
+        7.79997667062
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "sunflow",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tomcat",
+      "mean": 10.976602064120002,
+      "stddev": 0.11039645012173244,
+      "median": 10.976602064120002,
+      "user": 78.07285669999999,
+      "system": 13.3974549,
+      "min": 10.898539985620001,
+      "max": 11.05466414262,
+      "times": [
+        10.898539985620001,
+        11.05466414262
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tomcat",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tradebeans",
+      "mean": 23.98429424212,
+      "stddev": 0.08112029049381736,
+      "median": 23.98429424212,
+      "user": 89.6524657,
+      "system": 4.222592899999999,
+      "min": 23.926933534619998,
+      "max": 24.04165494962,
+      "times": [
+        23.926933534619998,
+        24.04165494962
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tradebeans",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tradesoap",
+      "mean": 26.06157945662,
+      "stddev": 0.05719421461655003,
+      "median": 26.06157945662,
+      "user": 118.0858902,
+      "system": 4.4699368999999995,
+      "min": 26.021137039619997,
+      "max": 26.10202187362,
+      "times": [
+        26.10202187362,
+        26.021137039619997
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tradesoap",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar xalan",
+      "mean": 4.71386534212,
+      "stddev": 0.029863068862903522,
+      "median": 4.71386534212,
+      "user": 46.2859737,
+      "system": 45.8589219,
+      "min": 4.692748963620001,
+      "max": 4.7349817206200004,
+      "times": [
+        4.7349817206200004,
+        4.692748963620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "xalan",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar zxing",
+      "mean": 5.00505007462,
+      "stddev": 0.12491542486946852,
+      "median": 5.00505007462,
+      "user": 89.8012997,
+      "system": 5.2886269,
+      "min": 4.91672153062,
+      "max": 5.09337861862,
+      "times": [
+        4.91672153062,
+        5.09337861862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "zxing",
+        "ppparams": "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar avrora",
+      "mean": 12.87608300762,
+      "stddev": 0.05726060770066083,
+      "median": 12.87608300762,
+      "user": 9.8276757,
+      "system": 10.229405400000001,
+      "min": 12.835593643620001,
+      "max": 12.916572371620001,
+      "times": [
+        12.916572371620001,
+        12.835593643620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "avrora",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar batik",
+      "mean": 5.53504675812,
+      "stddev": 0.05762529307331049,
+      "median": 5.53504675812,
+      "user": 18.421635199999997,
+      "system": 0.8584803999999999,
+      "min": 5.49429952262,
+      "max": 5.5757939936200005,
+      "times": [
+        5.49429952262,
+        5.5757939936200005
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "batik",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar biojava",
+      "mean": 17.73294973912,
+      "stddev": 0.006899347637162726,
+      "median": 17.73294973912,
+      "user": 21.9551682,
+      "system": 1.2745989,
+      "min": 17.728071163619997,
+      "max": 17.73782831462,
+      "times": [
+        17.73782831462,
+        17.728071163619997
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "biojava",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar eclipse",
+      "mean": 29.43322533762,
+      "stddev": 0.0497329299274851,
+      "median": 29.43322533762,
+      "user": 124.84128919999999,
+      "system": 5.560242899999999,
+      "min": 29.39805884562,
+      "max": 29.46839182962,
+      "times": [
+        29.39805884562,
+        29.46839182962
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "eclipse",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar fop",
+      "mean": 4.34048696562,
+      "stddev": 0.07793836442569878,
+      "median": 4.34048696562,
+      "user": 23.244931700000002,
+      "system": 0.9566964,
+      "min": 4.285376219620001,
+      "max": 4.395597711620001,
+      "times": [
+        4.395597711620001,
+        4.285376219620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "fop",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar graphchi",
+      "mean": 16.67693664462,
+      "stddev": 0.2417499061643158,
+      "median": 16.67693664462,
+      "user": 79.3678017,
+      "system": 3.4369718999999996,
+      "min": 16.50599364662,
+      "max": 16.847879642619997,
+      "times": [
+        16.847879642619997,
+        16.50599364662
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "graphchi",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar h2",
+      "mean": 33.679614097620004,
+      "stddev": 0.232398816377136,
+      "median": 33.679614097620004,
+      "user": 175.7448877,
+      "system": 4.8083084,
+      "min": 33.51528331862,
+      "max": 33.84394487662,
+      "times": [
+        33.84394487662,
+        33.51528331862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "h2",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar jme",
+      "mean": 8.76680692762,
+      "stddev": 0.08819983439466668,
+      "median": 8.76680692762,
+      "user": 4.5572722,
+      "system": 0.2863259,
+      "min": 8.704440226620001,
+      "max": 8.82917362862,
+      "times": [
+        8.704440226620001,
+        8.82917362862
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "jme",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar jython",
+      "mean": 17.396389592619997,
+      "stddev": 0.03095097315185463,
+      "median": 17.396389592619997,
+      "user": 43.9679247,
+      "system": 1.3760123999999998,
+      "min": 17.37450394962,
+      "max": 17.418275235619998,
+      "times": [
+        17.37450394962,
+        17.418275235619998
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "jython",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar luindex",
+      "mean": 30.456901328119997,
+      "stddev": 0.2821892644915217,
+      "median": 30.456901328119997,
+      "user": 43.0502282,
+      "system": 1.7973633999999998,
+      "min": 30.25736338562,
+      "max": 30.656439270619998,
+      "times": [
+        30.25736338562,
+        30.656439270619998
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "luindex",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar lusearch",
+      "mean": 8.16382202362,
+      "stddev": 0.03721963174478057,
+      "median": 8.16382202362,
+      "user": 108.25608169999998,
+      "system": 3.5761354,
+      "min": 8.13750376962,
+      "max": 8.190140277620001,
+      "times": [
+        8.190140277620001,
+        8.13750376962
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "lusearch",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar pmd",
+      "mean": 6.95889324262,
+      "stddev": 0.09230572628715959,
+      "median": 6.95889324262,
+      "user": 92.6451802,
+      "system": 3.0523454,
+      "min": 6.893623237620001,
+      "max": 7.024163247620001,
+      "times": [
+        6.893623237620001,
+        7.024163247620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "pmd",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar spring",
+      "mean": 14.44996310212,
+      "stddev": 0.018780639435696144,
+      "median": 14.44996310212,
+      "user": 159.30057619999997,
+      "system": 9.8493454,
+      "min": 14.43668318462,
+      "max": 14.46324301962,
+      "times": [
+        14.46324301962,
+        14.43668318462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "spring",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar sunflow",
+      "mean": 10.04741672262,
+      "stddev": 0.622972341264799,
+      "median": 10.04741672262,
+      "user": 216.2440107,
+      "system": 1.8339439,
+      "min": 9.606908755620001,
+      "max": 10.48792468962,
+      "times": [
+        10.48792468962,
+        9.606908755620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "sunflow",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tomcat",
+      "mean": 10.89133651262,
+      "stddev": 0.01629226349755543,
+      "median": 10.89133651262,
+      "user": 81.18388719999999,
+      "system": 13.4130279,
+      "min": 10.879816142620001,
+      "max": 10.90285688262,
+      "times": [
+        10.90285688262,
+        10.879816142620001
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tomcat",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tradebeans",
+      "mean": 24.41807202162,
+      "stddev": 0.38395368171186156,
+      "median": 24.41807202162,
+      "user": 93.8404652,
+      "system": 4.3344299,
+      "min": 24.14657576962,
+      "max": 24.689568273619997,
+      "times": [
+        24.14657576962,
+        24.689568273619997
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tradebeans",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar tradesoap",
+      "mean": 25.905997448119997,
+      "stddev": 0.13228447384288586,
+      "median": 25.905997448119997,
+      "user": 115.9426197,
+      "system": 4.5740374,
+      "min": 25.81245819962,
+      "max": 25.999536696619998,
+      "times": [
+        25.81245819962,
+        25.999536696619998
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "tradesoap",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar xalan",
+      "mean": 4.12381448262,
+      "stddev": 0.0015272898361797108,
+      "median": 4.12381448262,
+      "user": 46.7774672,
+      "system": 31.6369409,
+      "min": 4.12273452562,
+      "max": 4.12489443962,
+      "times": [
+        4.12489443962,
+        4.12273452562
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "xalan",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    },
+    {
+      "command": "java -Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt -jar /run/media/olka/llm/dacapo/dacapo-23.11-MR2-chopin.jar zxing",
+      "mean": 5.06388389412,
+      "stddev": 0.10042066119185813,
+      "median": 5.06388389412,
+      "user": 93.3560037,
+      "system": 4.6582829,
+      "min": 4.992875763620001,
+      "max": 5.13489202462,
+      "times": [
+        4.992875763620001,
+        5.13489202462
+      ],
+      "exit_codes": [
+        0,
+        0
+      ],
+      "parameters": {
+        "bench": "zxing",
+        "ppparams": "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt"
+      }
+    }
+  ]
+}

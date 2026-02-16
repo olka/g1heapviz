@@ -23,12 +23,12 @@ for result in data["results"]:
     stddev = result["stddev"]
 
     # Categorize ppparams
-    if ppparams == "16M":
-        param_label = "16M RegionSize (Default)"
-    elif "1M" in ppparams:
-        param_label = "1M RegionSize"
+    if ppparams == "":
+        param_label = "Baseline"
+    elif "-Xlog:async" in ppparams:
+        param_label = "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gc.log"
     else:
-        param_label = "32M RegionSize"
+        param_label = "-Xlog:gc+heap+region=trace:file=/tmp/gc.log"
 
     if bench_name not in benchmarks:
         benchmarks[bench_name] = {}
@@ -39,7 +39,11 @@ for result in data["results"]:
 sorted_benchmarks = sorted(benchmarks.keys())
 
 # Prepare data for grouped bar chart
-param_labels = ["1M RegionSize", "16M RegionSize (Default)", "32M RegionSize"]
+param_labels = [
+    "Baseline",
+    "-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gc.log",
+    "-Xlog:gc+heap+region=trace:file=/tmp/gc.log",
+]
 x = np.arange(len(sorted_benchmarks))
 width = 0.25  # Width of each bar
 
@@ -79,14 +83,14 @@ for i, param_label in enumerate(param_labels):
 ax.set_xlabel("Benchmark", fontsize=12, fontweight="bold")
 ax.set_ylabel("Mean Execution Time (seconds)", fontsize=12, fontweight="bold")
 ax.set_title(
-    "DaCapo Benchmark Results: JVM G1HeapRegionSize Parameter Comparison",
+    "DaCapo Benchmark Results: JVM Logging Parameter Comparison",
     fontsize=14,
     fontweight="bold",
     pad=20,
 )
 ax.set_xticks(x)
 ax.set_xticklabels(sorted_benchmarks, rotation=45, ha="right")
-ax.legend(loc="upper right", fontsize=10)
+ax.legend(loc="upper left", fontsize=10)
 
 # Add grid for better readability
 ax.grid(True, axis="y", alpha=0.3, linestyle="--")
@@ -95,15 +99,15 @@ ax.set_axisbelow(True)
 # Add statistics text box
 total_benchmarks = len(sorted_benchmarks)
 total_configs = len(param_labels)
-# stats_text = f'Benchmarks: {total_benchmarks} | Configurations: {total_configs}'
-# ax.text(0.98, 0.98, stats_text, transform=ax.transAxes,
-#        fontsize=10, verticalalignment='top', horizontalalignment='right',
-#        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+stats_text = f'Benchmarks: {total_benchmarks} | Configurations: {total_configs}'
+ax.text(0.98, 0.98, stats_text, transform=ax.transAxes,
+       fontsize=10, verticalalignment='top', horizontalalignment='right',
+       bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
 plt.tight_layout()
 
 # Save the figure
-plt.savefig("dacapo_benchmark_results.png", dpi=300, bbox_inches="tight")
+plt.savefig("dacapo_benchmark_results_logs.png", dpi=300, bbox_inches="tight")
 print("Chart saved as 'dacapo_benchmark_results.png'")
 
 # Also create a focused chart for just lusearch benchmark

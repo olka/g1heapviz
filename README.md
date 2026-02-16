@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # g1heapviz [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18428126.svg)](https://doi.org/10.5281/zenodo.18428126)
 
 JVM Heap Fragmentation Analysis and Visualization Tool.
@@ -81,18 +82,12 @@ Output format: `GC#, ext_frag_before, ext_frag_after, is_full_gc`
 | `/multipart/data` | GET | Get raw region data |
 
 
-### 7. Python Analysis Scripts to replicate resutls from paper
+### 7. Python Analysis Scripts
 
 Install dependencies:
 
 ```bash
-python3.12 -m venv .
-source bin/activate
 pip install -r requirements.txt
-
-python analysis/plot_fragmentation.py data/frag_format.txt
-python analysis/visualize_regions.py ICPE_whitepaper/Figures/regions.json
-
 ```
 
 Scripts in `analysis/`:
@@ -100,10 +95,8 @@ Scripts in `analysis/`:
 | Script | Input | Output |
 |---|---|---|
 | `plot_fragmentation.py` | `frag_format.txt` (CSV from CLI) | Fragmentation trend plot (PNG + PDF) |
-| `visualize_regions.py` | Region JSON data | Heap region grid visualization |
-| `visualize_benchmark.py` | `out.json` | Benchmark result plots |
-| `visualize_lusearch.py` | `out.json` | DaCapo lusearch analysis |
-| `visualize_lusearch_color.py` | `out.json` | Color-coded lusearch visualization |
+| `visualize_benchmark.py` | `data/regions_wide.json` | Impact of RegionSize on performance and external fragmentation on various DaCapo workloads |
+| `visualize_lusearch_color.py` | `data/baseline_lusearch_param.json` | G1GC Logging parameters overhead |
 
 To generate `frag_format.txt` from a GC log:
 
@@ -111,79 +104,48 @@ To generate `frag_format.txt` from a GC log:
 java -cp target/classes org.gc.log.parser.GcLogParser gc.log > frag_format.txt
 ```
 
-## Examples how to generate a GC Log
-
-Run any Java application with region-level GC tracing enabled:
+To generate plots from paper:
 
 ```bash
-java -XX:+UseG1GC "-Xlog:gc+heap+region=trace:file=gc.log" -jar your-application.jar 
-```
+python3.12 -m venv .
+source bin/activate
+pip install -r requirements.txt
 
-After project was built:
-```bash
-java -XX:+UseG1GC -XX:G1HeapRegionSize=16m "-Xlog:gc+heap+region=trace:file=gc.log" -cp target/classes org.test.SoftReferencesTest     
-```
-
-### Example how to gather data for DaCapo (lusearch benchamrk)
-
-```bash
-java -XX:G1HeapRegionSize=1m "-Xlog:gc*,heap+region*=trace:file=lusearch_1m.log" -jar dacapo-23.11-MR2-chopin.jar lusearch -s large
-java -XX:G1HeapRegionSize=8m "-Xlog:gc*,heap+region*=trace:file=lusearch_8m.log" -jar dacapo-23.11-MR2-chopin.jar lusearch -s large
-java -XX:G1HeapRegionSize=16m "-Xlog:gc*,heap+region*=trace:file=lusearch_16m.log" -jar dacapo-23.11-MR2-chopin.jar lusearch -s large
-java -XX:G1HeapRegionSize=32m "-Xlog:gc*,heap+region*=trace:file=lusearch_32m.log" -jar dacapo-23.11-MR2-chopin.jar lusearch -s large
-```
-
-============================================================================================================================================
-
-## Example how hyperfine was used in paper
-```bash
-hyperfine --warmup 10 --runs 2 --export-json baseline_lusearch_param.json -L ppparams "-Xlog:gc+heap+region=trace:file=/tmp/gclog.txt","-Xlog:async -Xlog:gc+heap+region=trace:file=/tmp/gclog.txt" 'java {ppparams} -jar dacapo-23.11-MR2-chopin.jar lusearch -s large'
+python analysis/visualize_benchmark.py analysis/data/regions_wide.json
+python analysis/visualize_lusearch_color.py analysis/data/baseline_lusearch_param.json
 ```
 
 ## Project Structure
 
 ```
 g1heapviz/
-├── src/
-│   ├── main/
-│   │   ├── java/org/
-│   │   │   ├── gc/log/parser/
-│   │   │   │   ├── GcLogParser.java       # GC log parser (main logic)
-│   │   │   │   └── Main.java              # Humongous region analysis CLI
-│   │   │   ├── heapfrag/model/
-│   │   │   │   ├── GcCycle.java           # GC cycle model
-│   │   │   │   ├── HeapSnapshot.java      # Snapshot with fragmentation metrics
-│   │   │   │   └── Region.java            # Heap region model
-│   │   │   ├── http/
-│   │   │   │   ├── DataResource.java      # File upload endpoint (/multipart)
-│   │   │   │   ├── GreetingResource.java  # Graph data + metrics API (/graph)
-│   │   │   │   ├── HeapDataStore.java     # Shared CDI data store
-│   │   │   │   ├── SSEResource.java       # Server-sent events (/sse)
-│   │   │   │   └── StartupLoader.java     # CLI file arg loader
-│   │   │   └── test/
-│   │   │       └── SoftReferencesTest.java  # Sample GC workload
-│   │   └── resources/
-│   │       ├── META-INF/resources/
-│   │       │   └── index.html             # Web UI
-│   │       └── application.properties
-│   └── test/java/org/
-│       ├── gc/log/parser/
-│       │   └── GcLogParserTest.java       # Parser tests
-│       └── heapfrag/model/
-│           └── HeapSnapshotTest.java      # Metrics + snapshot tests
-├── analysis/                              # Python analysis scripts
-│   ├── plot_fragmentation.py
-│   ├── visualize_benchmark.py
-│   ├── visualize_lusearch.py
-│   ├── visualize_lusearch_color.py
-│   └── visualize_regions.py
-├── data/                                  # Sample GC logs
-├── Dockerfile
-├── pom.xml
-├── requirements.txt                       # Python dependencies
-└── LICENSE                                # Apache 2.0
+├── src/main/java/org/
+│   ├── gc/log/parser/        # GC log parsing
+│   │   ├── GcLogParser.java  # Main parser
+│   │   ├── Main.java         # Humongous region analysis CLI
+│   │   └── VmInfoRetriever.java  # JMX live VM info
+│   ├── heapfrag/model/       # Domain model
+│   │   ├── HeapSnapshot.java # Snapshot + fragmentation metrics
+│   │   └── Region.java       # Individual heap region
+│   ├── http/                 # REST API
+│   │   ├── DataResource.java # File upload endpoint
+│   │   ├── GreetingResource.java  # Graph data endpoint
+│   │   ├── SSEResource.java  # Server-sent events
+│   │   ├── HeapDataStore.java # Shared data store
+│   │   └── StaticResources.java   # Static file serving
+│   └── test/                 # Test workloads
+├── src/main/resources/static/ # Web UI (ECharts heatmap)
+├── analysis/                 # Python analysis scripts
+├── samples/                  # Sample data generation
+├── ICPE_whitepaper/          # Paper materials
+├── Dockerfile                # Container build
+└── pom.xml                   # Maven build
 ```
 
-## License
+## Development Mode
 
-Apache License 2.0. See [LICENSE](LICENSE).
+```bash
+mvn quarkus:dev
+```
+
+Enables live reload. Dev UI at http://localhost:8080/q/dev/
