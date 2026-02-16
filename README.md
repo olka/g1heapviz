@@ -111,6 +111,7 @@ python3.12 -m venv .
 source bin/activate
 pip install -r requirements.txt
 
+python analysis/plot_fragmentation.py frag_format.txt
 python analysis/visualize_benchmark.py analysis/data/regions_wide.json
 python analysis/visualize_lusearch_color.py analysis/data/baseline_lusearch_param.json
 ```
